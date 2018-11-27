@@ -8,10 +8,20 @@
         <title>gpt-demo</title>
     </head>
     <body>
+        <script>
+            console.time("✔ googletagDefined");
+            console.time("✔ beforeEach");
+            console.time("✔ afterEach");
+            console.time("✔ AppCreated");
+            console.time("✔ DOM4AdCreated");
+            console.time("✔ DOM4AdMounted");
+            console.time("✔ AppMounted");
+        </script>
         <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
         <script>
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
+            console.timeEnd("✔ googletagDefined");
         </script>
         <noscript>
             <strong>We're sorry but gpt-demo doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>

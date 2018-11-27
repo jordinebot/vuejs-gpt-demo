@@ -9,11 +9,13 @@ export default {
     created: function() {
         const slots = document.querySelectorAll(".vue-ad");
         console.log("App has been CREATED with", slots.length, "slots.");
+        console.timeEnd("✔ AppCreated");
     },
     mounted: function() {
         const slots = document.querySelectorAll(".vue-ad");
         console.log("App has been MOUNTED with", slots.length, "slots.");
         displayAds(slots);
+        console.timeEnd("✔ AppMounted");
     },
     updated: function() {
         const slots = document.querySelectorAll(".vue-ad");

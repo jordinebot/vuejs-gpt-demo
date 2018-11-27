@@ -46,14 +46,15 @@ router.afterEach((to, from) => {
         console.log(`Defining ${to.meta.ad_units.length} Ad Slots.`);
         defineSlots(to.meta.ad_units);
     }
+    console.timeEnd("✔ afterEach");
 });
 
 router.beforeEach((to, from, next) => {
-    console.log(`Before navigation...`);
     if (typeof window.googletag.destroySlots === "function") {
         console.log("Destroying slots...");
         window.googletag.destroySlots();
     }
+    console.timeEnd("✔ beforeEach");
     next();
 });
 
