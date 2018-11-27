@@ -70,5 +70,8 @@ export default {
     grid-template-columns: 1fr 300px;
     grid-gap: 2em;
 }
+aside {
+    text-align: center;
+}
 </style>
 

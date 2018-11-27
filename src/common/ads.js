@@ -8,7 +8,7 @@ export const inventory = {
     },
     Example_300x250_Flex: {
         path: `/${GPT_ID}/Example_300x250_Flex`,
-        size: [300, 250],
+        size: [[300, 250], [300, 600], [160, 600]],
         dom_id: `Example_300x250_Flex`
     },
     Example_300x600: {
