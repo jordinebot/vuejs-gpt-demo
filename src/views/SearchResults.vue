@@ -1,30 +1,40 @@
 <template>
     <div class="about">
+        <AdSlot id="Example_728x90" />
         <router-link to="/">← Back</router-link>
         <SearchBox />
         <h2>
             Search results for: <span>{{ term }}</span>
         </h2>
-        <div class="movies">
-            <Loader v-if="loading" />
-            <Movie v-for="movie in movies" :key="movie.imdbID" :movie="movie" />
-            <NoResults v-if="!loading && !movies.length" />
+        <div class="content">
+            <section class="movies">
+                <Movie
+                    v-for="movie in movies"
+                    :key="movie.imdbID"
+                    :movie="movie"
+                />
+                <NoResults v-if="!loading && !movies.length" />
+            </section>
+            <aside>
+                <AdSlot id="Example_300x250_Flex" />
+                <AdSlot id="Example_300x600" class="sticky" />
+            </aside>
         </div>
     </div>
 </template>
 
 <script>
-import Loader from "@/assets/loading.svg?inline";
 import SearchBox from "@/components/SearchBox.vue";
 import Movie from "@/components/Movie.vue";
 import NoResults from "@/components/NoResults.vue";
+import AdSlot from "@/components/AdSlot.vue";
 export default {
     name: "results",
     components: {
-        Loader,
         SearchBox,
         Movie,
-        NoResults
+        NoResults,
+        AdSlot
     },
     computed: {
         term: function() {
@@ -50,3 +60,15 @@ export default {
     }
 };
 </script>
+
+<style scoped lang="scss">
+#Example_728x90 {
+    float: right;
+}
+.content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-gap: 2em;
+}
+</style>
+

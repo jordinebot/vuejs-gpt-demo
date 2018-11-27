@@ -2,7 +2,13 @@
     <div class="search-box component">
         <h1>Search a movie</h1>
         <form action="/search" @submit="onSearch">
-            <input type="search" name="q" v-model="q" />
+            <input
+                autofocus
+                type="search"
+                name="q"
+                v-model="q"
+                placeholder="Search by movie title only"
+            />
         </form>
     </div>
 </template>
@@ -33,5 +39,8 @@ input {
     border-radius: 6px;
     font-size: 2em;
     padding: 0.5em;
+}
+::placeholder {
+    color: #ddd;
 }
 </style>
