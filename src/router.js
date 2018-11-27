@@ -41,16 +41,13 @@ const router = new Router({
 });
 
 router.afterEach((to, from) => {
-    console.log(`Navigating from ${from.name} to ${to.name}`);
     if (typeof to.meta.ad_units !== "undefined") {
-        console.log(`Defining ${to.meta.ad_units.length} Ad Slots.`);
         defineSlots(to.meta.ad_units);
     }
 });
 
 router.beforeEach((to, from, next) => {
     if (typeof window.googletag.destroySlots === "function") {
-        console.log("Destroying slots...");
         window.googletag.destroySlots();
     }
     next();
