@@ -19,14 +19,19 @@ export default {
     display: inline-block;
     position: relative;
     z-index: 9;
-    &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateY(-100%);
-        content: "This is an Ad.";
-        font-size: 12px;
-    }
+}
+
+.vue-ad:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    content: "This is an Ad.";
+    font-size: 12px;
+}
+
+.vue-ad:empty {
+    display: none;
 }
 
 .vue-ad + .vue-ad {
