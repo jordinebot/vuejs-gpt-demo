@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <router-link to="/">←  Back</router-link>
+        <router-link to="/">← Back</router-link>
         <SearchBox />
         <h2>
             Search results for: <span>{{ term }}</span>
@@ -27,6 +27,9 @@ export default {
         NoResults
     },
     computed: {
+        term: function() {
+            return this.$route.params.query;
+        },
         movies: {
             get() {
                 return this.$store.state.movies;
@@ -41,9 +44,8 @@ export default {
     created: function() {
         const loading = this.$store.state.loading;
         const movies = this.$store.state.movies.length;
-        const term = this.$route.params.query;
-        if (!loading && !movies && term) {
-            this.$store.dispatch("fetchMovies", term);
+        if (!loading && !movies && this.term) {
+            this.$store.dispatch("fetchMovies", this.term);
         }
     }
 };

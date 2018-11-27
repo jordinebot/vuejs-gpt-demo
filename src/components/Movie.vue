@@ -1,6 +1,10 @@
 <template>
     <div class="movie component">
-        <img :src="movie.Poster" alt="movie.Title" />
+        <img :src="movie.Poster" :alt="movie.Title" />
+        <div class="detail">
+            <h3>{{ movie.Title }}</h3>
+            <p>{{ movie.Year }}</p>
+        </div>
     </div>
 </template>
 
@@ -18,8 +22,10 @@ export default {
 
 <style scoped lang="scss">
 .movie {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 2em;
     border: 1px solid #ccc;
-    padding: 1em;
     img {
         display: block;
     }

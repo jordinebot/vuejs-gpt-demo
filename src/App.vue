@@ -10,5 +10,6 @@ body {
     color: #555;
     max-width: 1280px;
     margin: 2em auto;
+    padding: 0 2em;
 }
 </style>

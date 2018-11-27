@@ -1,5 +1,5 @@
 <template>
-    <img src="@/assets/not-found.gif" alt="No Results">
+    <img src="@/assets/not-found.gif" alt="No Results" />
 </template>
 
 <style scoped lang="scss">
