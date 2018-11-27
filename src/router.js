@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+// import SearchResults from "./views/SearchResults.vue";
 
 import { inventory, defineSlots } from "@/common/ads";
 
@@ -21,6 +22,7 @@ const router = new Router({
         {
             path: "/search/:query",
             name: "results",
+            // component: SearchResults,
             component: () =>
                 import(/* webpackChunkName: "results" */ "./views/SearchResults.vue"),
             meta: {
@@ -39,16 +41,16 @@ const router = new Router({
 });
 
 router.afterEach((to, from) => {
-    console.info(`Navigating from ${from.name} to ${to.name}`);
+    console.log(`Navigating from ${from.name} to ${to.name}`);
     if (typeof to.meta.ad_units !== "undefined") {
-        console.info(`Defining ${to.meta.ad_units.length} Ad Slots.`);
+        console.log(`Defining ${to.meta.ad_units.length} Ad Slots.`);
         defineSlots(to.meta.ad_units);
     }
 });
 
 router.beforeEach((to, from, next) => {
     if (typeof window.googletag.destroySlots === "function") {
-        console.info("Destroying slots...");
+        console.log("Destroying slots...");
         window.googletag.destroySlots();
     }
     next();

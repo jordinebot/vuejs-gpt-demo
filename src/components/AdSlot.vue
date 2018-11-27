@@ -15,6 +15,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.vue-ad {
+    position: relative;
+    z-index: 9;
+}
+
 .vue-ad + .vue-ad {
     margin-top: 2em;
 }

@@ -8,16 +8,16 @@ export default {
     name: "app",
     created: function() {
         const slots = document.querySelectorAll(".vue-ad");
-        console.info("App has been CREATED with", slots.length, "slots.");
+        console.log("App has been CREATED with", slots.length, "slots.");
     },
     mounted: function() {
         const slots = document.querySelectorAll(".vue-ad");
-        console.info("App has been MOUNTED with", slots.length, "slots.");
+        console.log("App has been MOUNTED with", slots.length, "slots.");
         displayAds(slots);
     },
     updated: function() {
         const slots = document.querySelectorAll(".vue-ad");
-        console.info("App has been UPDATED with", slots.length, "slots.");
+        console.log("App has been UPDATED with", slots.length, "slots.");
         displayAds(slots);
     }
 };

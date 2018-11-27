@@ -42,6 +42,7 @@ export const defineSlots = units => {
 export const displayAds = slots => {
     slots.forEach(slot =>
         window.googletag.cmd.push(function() {
+            console.log(`Calling display for ${slot.id}`);
             window.googletag.display(slot.id);
         })
     );
