@@ -3,7 +3,9 @@
         <img :src="movie.Poster" :alt="movie.Title" />
         <div class="detail">
             <h3>{{ movie.Title }}</h3>
-            <p><strong>{{ movie.Year }}</strong></p>
+            <p>
+                <strong>{{ movie.Year }}</strong>
+            </p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Vestibulum nisi orci, rutrum vitae suscipit sed, egestas eget
@@ -46,5 +48,8 @@ export default {
 }
 .movie + .movie {
     margin-top: 2em;
+}
+p + .vue-ad {
+    margin-top: 1em;
 }
 </style>

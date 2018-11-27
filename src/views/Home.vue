@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.home {
+    text-align: center;
+}
 #Example_728x90 {
     text-align: center;
 }

@@ -36,6 +36,7 @@ export default {
 <style scoped lang="scss">
 .about {
     margin: 2em auto;
+    text-align: left;
 }
 #Example_300x250 {
     float: left;

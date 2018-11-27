@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.search-box {
+    padding: 2em 0;
+}
 input {
     width: 100%;
     border: 3px solid #ccc;
