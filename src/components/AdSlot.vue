@@ -10,12 +10,6 @@ export default {
             type: String,
             default: ""
         }
-    },
-    created: function() {
-        console.timeEnd("✔ DOM4AdCreated");
-    },
-    mounted: function() {
-        console.timeEnd("✔ DOM4AdMounted");
     }
 };
 </script>
