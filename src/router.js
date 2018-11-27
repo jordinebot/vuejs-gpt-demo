@@ -49,6 +49,7 @@ router.afterEach((to, from) => {
 });
 
 router.beforeEach((to, from, next) => {
+    console.log(`Before navigation...`);
     if (typeof window.googletag.destroySlots === "function") {
         console.log("Destroying slots...");
         window.googletag.destroySlots();
